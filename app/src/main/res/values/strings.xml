@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Prajjwalan</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
+    <string name="web_client_id">412383955346-678m4j4suojelel4atrpo4o53s9uqtpo.apps.googleusercontent.com</string>
+    <string name="title_activity_home">Home</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="facebook_login">Login with Facebook</string>
+    <string name="google_login">Sign In</string>
+    <string name="loading">Loading. Please Wait...</string>
+    <string name="SignUp"><u>New User? Register Here!</u></string>
+    <string name="facebook_app_id">165395957513597</string>
+    <string name="fb_login_protocol_scheme">fb165395957513597</string>
+    <string name="title_activity_events">Events</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+</resources>
