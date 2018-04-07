@@ -18,4 +18,40 @@
     <string name="title_activity_events">Events</string>
     <string name="section_format">Hello World from section: %1$d</string>
 
+    <!-- string values for about_dev layout file !-->
+
+    <string name="dev1">Alabhya Pandey</string>
+    <string name="dev2">Karan Chauhan</string>
+    <string name="dev3">Anshuman Pandey</string>
+    <string name="dev1attr">BTech III<sup><small>rd</small></sup> Year</string>
+    <string name="dev2attr">BTech III<sup><small>rd</small></sup> Year</string>
+    <string name="dev3attr">BTech III<sup><small>rd</small></sup> Year</string>
+
+    <!-- string values for cardview layout !-->
+
+    <string name="developers"><b>Developers</b></string>
+    <string name="cardview1">Events</string>
+    <string name="cardview2">Events Details</string>
+    <string name="cardview3">Events</string>
+    <string name="cardview4">Events Details</string>
+    <string name="cardview5">Events</string>
+    <string name="cardview6">Events Details</string>
+    <string name="cardview7">Events</string>
+    <string name="cardview8">Events Details</string>
+
+    <!-- string values for menu activity_home_drawer !-->
+
+    <string name="about">ABOUT</string>
+    <string name="faq">FAQs</string>
+    <string name="results">RESULTS</string>
+    <string name="locate">LOCATION</string>
+    <string name="register">REGISTER NOW</string>
+    <string name="share">SHARE</string>
+    <string name="emailus">EMAIL US</string>
+    <string name="signout">SIGN ME OUT</string>
+    <string name="communicate">COMMUNICATE</string>
+    <string name="settings">SETTINGS</string>
+    <string name="myac">My Account</string>
+
+
 </resources>
