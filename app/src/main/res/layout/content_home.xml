@@ -17,10 +17,9 @@
             android:layout_height="match_parent"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:contentScrim="?attr/colorPrimary"
-            app:title="Home"
             app:expandedTitleMarginStart="48dp"
             app:expandedTitleMarginEnd="48dp"
-            android:background="@drawable/toolbar"
+            android:background="@drawable/collapsingtoolbar"
             android:fitsSystemWindows="true"
             app:popupTheme="@style/AppTheme.PopupOverlay">
             <android.support.v7.widget.Toolbar

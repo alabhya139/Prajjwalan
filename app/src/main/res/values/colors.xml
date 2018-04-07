@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#233b79</color>
-    <color name="colorPrimaryDark">#1a326d</color>
+    <color name="colorPrimaryDark">#212a33</color>
     <color name="White">#ffffff</color>
     <color name="blueDark">#0D47A1</color>
     <color name="facebook">#3B5998</color>
@@ -14,6 +14,9 @@
     <color name="darkblue">#23283a</color>
     <color name="testcolorblue">#152b38</color>
     <color name="pink">#fe104d</color>
+    <color name="cardbg">#212a33</color>
+    <color name="cardborder">#4fa5d5</color>
 
     <color name="black_overlay">#66000000</color>
+    <color name="navtext">#aed1f3</color>
 </resources>

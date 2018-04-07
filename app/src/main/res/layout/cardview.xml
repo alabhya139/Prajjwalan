@@ -18,16 +18,19 @@
         <android.support.v7.widget.CardView
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
-            android:id="@+id/bankcardId"
-            android:layout_width="140dp"
-            android:layout_height="170dp"
+            android:focusable="true"
+            android:id="@+id/eventcardId"
+            android:layout_width="130dp"
+            android:layout_height="160dp"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="8dip"
             android:layout_margin="10dp">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:background="#d1cfdc">
+                android:background="@drawable/cardbg1">
                 <ImageView
                     android:layout_width="64dp"
                     android:layout_height="64dp"
@@ -38,7 +41,7 @@
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:layout_marginTop="10dp"
-                    android:text="Day 1"/>
+                    android:text="@string/cardview1"/>
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -48,7 +51,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Event Timing of Day 1"
+                    android:text="@string/cardview2"
                     android:padding="5dp"
                     android:textColor="#000000"/>
 
@@ -57,15 +60,18 @@
         <android.support.v7.widget.CardView
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
-            android:layout_width="140dp"
-            android:layout_height="170dp"
+            android:focusable="true"
+            android:layout_width="130dp"
+            android:layout_height="160dp"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="8dip"
             android:layout_margin="10dp">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:background="#d1cfdc">
+                android:background="@drawable/cardbg1">
                 <ImageView
                     android:layout_width="64dp"
                     android:layout_height="64dp"
@@ -76,7 +82,7 @@
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:layout_marginTop="10dp"
-                    android:text="Day 1"/>
+                    android:text="@string/cardview3"/>
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -86,7 +92,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Event Timing of Day 1"
+                    android:text="@string/cardview4"
                     android:padding="5dp"
                     android:textColor="#000000"/>
 
@@ -103,15 +109,18 @@
         <android.support.v7.widget.CardView
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
-            android:layout_width="140dp"
-            android:layout_height="170dp"
+            android:focusable="true"
+            android:layout_width="130dp"
+            app:cardElevation="2dp"
+            android:layout_height="160dp"
+            app:cardCornerRadius="8dip"
             android:layout_margin="10dp">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:gravity="center"
-                android:background="#d1cfdc">
+                android:background="@drawable/cardbg1">
                 <ImageView
                     android:layout_width="64dp"
                     android:layout_height="64dp"
@@ -122,7 +131,7 @@
                     android:layout_height="wrap_content"
                     android:textStyle="bold"
                     android:layout_marginTop="10dp"
-                    android:text="Day 2"/>
+                    android:text="@string/cardview5"/>
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
@@ -132,7 +141,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text="Event Timing of Day 2"
+                    android:text="@string/cardview6"
                     android:padding="5dp"
                     android:textColor="#000000"/>
 
@@ -141,8 +150,11 @@
         <android.support.v7.widget.CardView
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
-            android:layout_width="140dp"
-            android:layout_height="170dp"
+            android:focusable="true"
+            app:cardCornerRadius="8dip"
+            android:layout_width="130dp"
+            android:layout_height="160dp"
+            app:cardElevation="2dp"
             android:layout_margin="10dp">
 
             <LinearLayout
@@ -150,7 +162,7 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:background="#d1cfdc">
+                android:background="@drawable/cardbg1">
 
                 <ImageView
                     android:layout_width="64dp"
@@ -162,7 +174,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    android:text="Day 3"
+                    android:text="@string/cardview7"
                     android:textStyle="bold" />
 
                 <View
@@ -176,7 +188,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:padding="5dp"
-                    android:text="Event Timing of Day 2"
+                    android:text="@string/cardview8"
                     android:textColor="#000000" />
 
             </LinearLayout>
@@ -192,20 +204,33 @@
         android:orientation="horizontal">
 
         <android.support.v7.widget.CardView
-            android:layout_width="300dp"
-            android:layout_height="150dp"
+            android:id="@+id/dev_cardview"
+            android:layout_width="280dp"
+            android:layout_height="100dp"
             android:layout_margin="10dp"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="8dp"
             android:clickable="true"
+            android:focusable="true"
             android:foreground="?android:attr/selectableItemBackground">
 
-            <TextView
+            <RelativeLayout
+                android:background="@drawable/cardbg1"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="        Developers"
-                android:fontFamily="serif"
-                android:textSize="32dp"
-                android:gravity="bottom"
-                android:background="@drawable/devbackground"/>
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/developers"
+                    android:textSize="36sp"
+                    android:textColor="@color/White"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"/>
+
+
+            </RelativeLayout>
+
 
         </android.support.v7.widget.CardView>
 
