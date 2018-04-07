@@ -1,2 +1,2 @@
 # Prajjwalan
-The app is in developmen phase!
+The app is in development phase!
