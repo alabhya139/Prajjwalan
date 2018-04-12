@@ -11,7 +11,7 @@
     <string name="action_settings">Settings</string>
     <string name="facebook_login">Login with Facebook</string>
     <string name="google_login">Sign In</string>
-    <string name="loading">Loading. Please Wait...</string>
+    <string name="loading">Loading.Please Wait... </string>
     <string name="SignUp"><u>New User? Register Here!</u></string>
     <string name="facebook_app_id">165395957513597</string>
     <string name="fb_login_protocol_scheme">fb165395957513597</string>
@@ -26,32 +26,45 @@
     <string name="dev1attr">BTech III<sup><small>rd</small></sup> Year</string>
     <string name="dev2attr">BTech III<sup><small>rd</small></sup> Year</string>
     <string name="dev3attr">BTech III<sup><small>rd</small></sup> Year</string>
+    <string name="branch1">Computer Science and Engineering</string>
+    <string name="branch2">Electronics and Communication Engineering</string>
 
     <!-- string values for cardview layout !-->
 
-    <string name="developers"><b>Developers</b></string>
+    <string name="developers">DEVELOPERS</string>
     <string name="cardview1">Events</string>
     <string name="cardview2">Events Details</string>
-    <string name="cardview3">Events</string>
-    <string name="cardview4">Events Details</string>
-    <string name="cardview5">Events</string>
-    <string name="cardview6">Events Details</string>
-    <string name="cardview7">Events</string>
-    <string name="cardview8">Events Details</string>
+    <string name="cardview3">WorkShop</string>
+    <string name="cardview4">Learn to Grow</string>
+    <string name="cardview5">Talk Show</string>
+    <string name="cardview6">Know our Guests</string>
+    <string name="cardview7">Sponsors</string>
+    <string name="cardview8">Our Sponsors</string>
+    <string name="cardview9">Teams</string>
+    <string name="cardview10">Managing Team</string>
 
     <!-- string values for menu activity_home_drawer !-->
 
     <string name="about">ABOUT</string>
     <string name="faq">FAQs</string>
-    <string name="results">RESULTS</string>
+    <string name="results">CREDITS</string>
     <string name="locate">LOCATION</string>
     <string name="register">REGISTER NOW</string>
     <string name="share">SHARE</string>
     <string name="emailus">EMAIL US</string>
-    <string name="signout">SIGN ME OUT</string>
+    <string name="signout">LOGOUT</string>
     <string name="communicate">COMMUNICATE</string>
     <string name="settings">SETTINGS</string>
     <string name="myac">My Account</string>
 
+    <string name="event_details"><ul>Event Detail</ul></string>
+    <string name="coord"><ul>Coordinator</ul></string>
+
+    <string name="path_circle">
+    M 50,50
+    m -48,0
+    a 48,48 0 1,0 96,0
+    a 48,48 0 1,0 -96,0
+  </string>
 
 </resources>

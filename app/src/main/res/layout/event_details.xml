@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:background="@color/colorPrimaryDark"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/event_toolbar"
+        android:paddingTop="@dimen/_8sdp"
+        android:paddingBottom="@dimen/_8sdp"
+        android:background="@drawable/cardbg"
+        android:layout_width="match_parent"
+        app:theme="@style/ToolbarStyle"
+        android:layout_height="?attr/actionBarSize">
+
+        <TextView
+            android:id="@+id/event_type"
+            android:text="Robotics"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:marqueeRepeatLimit="marquee_forever"
+            android:textColor="@color/White"
+            android:textSize="@dimen/_20ssp"
+            android:paddingBottom="@dimen/_8sdp"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_50sdp" />
+    </android.support.v7.widget.Toolbar>
+
+
+    <ImageView
+        android:scaleType="fitXY"
+        android:layout_margin="8dp"
+        android:id="@+id/event_detail_image"
+        android:layout_width="match_parent"
+        android:layout_height="210dp" />
+
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_below="@id/event_detail_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabGravity="fill"
+        app:tabMode="scrollable"
+        app:tabTextColor="@color/White"
+        app:tabSelectedTextColor="@color/colorPrimaryDark"
+        app:tabBackground="@color/cardborder"
+        app:tabIndicatorColor="@color/White"/>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    </android.support.v4.view.ViewPager>
+
+
+
+
+
+</LinearLayout>

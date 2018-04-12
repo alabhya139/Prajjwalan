@@ -2,11 +2,12 @@ package com.prajjawalan.prajjwalan;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
+import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
 import android.support.v7.widget.CardView;
@@ -18,8 +19,11 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 
 import com.bumptech.glide.request.target.BitmapImageViewTarget;
+
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -27,10 +31,14 @@ import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.prajjawalan.prajjwalan.models.Users;
 import com.prajjawalan.prajjwalan.utils.Constants;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Home extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -42,8 +50,12 @@ public class Home extends BaseActivity
     private FirebaseAuth.AuthStateListener mAuthListener;
     private CardView devCardView;
     private CardView eventCard;
-
-
+    private TextView updates;
+    private TextView movingText;
+    Animation animBlink;
+    private TextView countdown;
+    CountDownTimer countDownTimer;
+    SimpleDateFormat simpleDateFormat;
 
 
     @Override
@@ -57,15 +69,15 @@ public class Home extends BaseActivity
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                if (firebaseAuth.getCurrentUser() == null){
-                    startActivity(new Intent(Home.this,GoogleSignIn.class));
+                if (firebaseAuth.getCurrentUser() == null) {
+                    startActivity(new Intent(Home.this, GoogleSignIn.class));
                 }
             }
         };
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        if(getSupportActionBar()!=null){
+        if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
@@ -86,20 +98,42 @@ public class Home extends BaseActivity
         devCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Home.this,Developers.class));
+                startActivity(new Intent(Home.this, Developers.class));
             }
         });
 
         eventCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Home.this,Events.class));
+                startActivity(new Intent(Home.this, CommonActivity.class));
+            }
+        });
+
+        final CollapsingToolbarLayout collapsingToolbarLayout = findViewById(R.id.collapsingtoolbar);
+        AppBarLayout appBarLayout = findViewById(R.id.appbar);
+        appBarLayout.addOnOffsetChangedListener(new AppBarLayout.OnOffsetChangedListener() {
+            boolean isShow = true;
+            int scrollRange = -1;
+
+            @Override
+            public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
+                if (scrollRange == -1) {
+                    scrollRange = appBarLayout.getTotalScrollRange();
+                }
+                if (scrollRange + verticalOffset == 0) {
+                    collapsingToolbarLayout.setTitle("Prajjwalan");
+                    isShow = true;
+                } else if (isShow) {
+                    collapsingToolbarLayout.setTitle(" ");
+                    isShow = false;
+                }
             }
         });
 
         displayImageView = navHeaderView.findViewById(R.id.name_image);
         nameTextView = navHeaderView.findViewById(R.id.name);
         emailTextView = navHeaderView.findViewById(R.id.email_address);
+
 
         FirebaseDatabase.getInstance().getReference(Constants.USER_KEY).child(mFirebaseUser.getEmail().replace(".", ","))
                 .addListenerForSingleValueEvent(new ValueEventListener() {
@@ -111,7 +145,7 @@ public class Home extends BaseActivity
                                     .load(users.getPhotUrl())
                                     .asBitmap()
                                     .centerCrop()
-                                    .into(new BitmapImageViewTarget(displayImageView){
+                                    .into(new BitmapImageViewTarget(displayImageView) {
                                         @Override
                                         protected void setResource(Bitmap resource) {
                                             RoundedBitmapDrawable circularBitmapDrawable =
@@ -131,6 +165,31 @@ public class Home extends BaseActivity
 
                     }
                 });
+
+
+
+
+
+        updates = findViewById(R.id.updates);
+        animBlink = AnimationUtils.loadAnimation(this, R.anim.blink);
+        updates.startAnimation(animBlink);
+
+        movingText = findViewById(R.id.movingtext);
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("updates");
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                String value =dataSnapshot.getValue(String.class);
+                movingText.setText(value);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+        movingText.setSelected(true);
     }
 
     @Override
@@ -186,7 +245,8 @@ public class Home extends BaseActivity
 
         if (id == R.id.nav_camera) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        } else if (id == R.id.register) {
+            startActivity(new Intent(getApplicationContext(),RegisterActivity.class));
 
         } else if (id == R.id.nav_slideshow) {
 
@@ -194,7 +254,8 @@ public class Home extends BaseActivity
 
         } else if (id == R.id.nav_share) {
 
-        } else if (id == R.id.nav_send) {
+        } else if (id == R.id.sign_out) {
+            mAuth.signOut();
 
         }
 

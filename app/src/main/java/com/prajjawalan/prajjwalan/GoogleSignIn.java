@@ -8,6 +8,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
@@ -33,16 +34,45 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class GoogleSignIn extends BaseActivity {
     private static final String TAG = GoogleSignIn.class.getSimpleName();
     private static final int RC_SIGN_IN = 9001; //Request code for signing in
     private GoogleSignInOptions mGso;
+    private TextView countdown;
+    CountDownTimer countDownTimer;
+    SimpleDateFormat simpleDateFormat;
 
     private FirebaseAuth.AuthStateListener mAuthListener;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.sign_in);
+
+        countdown =findViewById(R.id.countdown);
+
+        long totalTimeCount = 1523943000000L - System.currentTimeMillis();
+        countDownTimer = new CountDownTimer(totalTimeCount,500) {
+            @Override
+            public void onTick(long millisUntilFinished) {
+                simpleDateFormat = new SimpleDateFormat("dd:hh:mm:ss");
+                Date date = new Date(millisUntilFinished);
+                String dateText = simpleDateFormat.format(date);
+                countdown.setText(dateText);
+            }
+
+            @Override
+            public void onFinish() {
+            }
+        }.start();
+
+        Typeface font = Typeface.createFromAsset(
+                this.getAssets(),
+                "fonts/digital.ttf");
+        countdown.setTypeface(font);
+        countdown.setTextSize(60);
 
         findViewById(R.id.sign_in_button).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -85,6 +115,8 @@ public class GoogleSignIn extends BaseActivity {
     protected void onStart() {
         super.onStart();
         mAuth.addAuthStateListener(mAuthListener);
+
+
     }
 
 
