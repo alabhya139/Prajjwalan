@@ -36,9 +36,9 @@ public class EventDetail extends AppCompatActivity {
         viewPager = findViewById(R.id.view_pager);
 
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.AddFragment(new EventDetailsFragment(),"Event Details");
-        adapter.AddFragment(new RulesFragment(), "Rules");
+        adapter.AddFragment(new EventDetailsFragment(),"Details & Rules");
         adapter.AddFragment(new ScheduleFragment(), "Schedule");
+        adapter.AddFragment(new CoordinatorFragment(), "Coordinator");
         adapter.AddFragment(new ResultFragment(), "Result");
 
         viewPager.setAdapter(adapter);

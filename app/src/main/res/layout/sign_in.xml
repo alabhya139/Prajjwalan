@@ -24,22 +24,13 @@
         android:layout_height="wrap_content" />
 
     <Button
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="48dp"
-        android:id="@+id/sign_in_button"
-        android:layout_marginTop="16dp"
-        android:textColorHint="#fff"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:padding="8dp"
-        android:hint="@string/google_login"
-        android:textSize="20sp"
+        android:id="@+id/buttonsignin"
+        android:textColor="@color/White"
+        android:text="Click To Continue"
+        android:layout_margin="@dimen/_32sdp"
         android:background="@drawable/login_btn"
-        android:drawableStart="@drawable/google"
-        android:drawableLeft="@drawable/google"
-        android:paddingLeft="20dp"/>
-
-
+        android:layout_below="@id/remaining_text"
+        android:layout_width="@dimen/_300sdp"
+        android:layout_height="wrap_content" />
 
 </RelativeLayout>

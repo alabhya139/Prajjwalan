@@ -8,8 +8,6 @@
 
     <android.support.v7.widget.Toolbar
         android:id="@+id/event_toolbar"
-        android:paddingTop="@dimen/_8sdp"
-        android:paddingBottom="@dimen/_8sdp"
         android:background="@drawable/cardbg"
         android:layout_width="match_parent"
         app:theme="@style/ToolbarStyle"
@@ -18,12 +16,12 @@
         <TextView
             android:id="@+id/event_type"
             android:text="Robotics"
+            android:gravity="center_vertical"
             android:ellipsize="marquee"
             android:singleLine="true"
             android:marqueeRepeatLimit="marquee_forever"
             android:textColor="@color/White"
             android:textSize="@dimen/_20ssp"
-            android:paddingBottom="@dimen/_8sdp"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_50sdp" />
     </android.support.v7.widget.Toolbar>
@@ -36,6 +34,10 @@
         android:layout_width="match_parent"
         android:layout_height="210dp" />
 
+    <LinearLayout
+        android:background="@color/cardborder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
     <android.support.design.widget.TabLayout
         android:id="@+id/tab_layout"
         android:layout_below="@id/event_detail_image"
@@ -45,8 +47,9 @@
         app:tabMode="scrollable"
         app:tabTextColor="@color/White"
         app:tabSelectedTextColor="@color/colorPrimaryDark"
-        app:tabBackground="@color/cardborder"
         app:tabIndicatorColor="@color/White"/>
+
+    </LinearLayout>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/view_pager"

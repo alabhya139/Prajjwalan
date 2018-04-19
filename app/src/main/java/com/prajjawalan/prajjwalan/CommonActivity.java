@@ -1,13 +1,11 @@
 package com.prajjawalan.prajjwalan;
 
-import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,7 +13,6 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
@@ -23,8 +20,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.prajjawalan.prajjwalan.models.Data;
 import com.squareup.picasso.Picasso;
-
-import java.util.ArrayList;
 
 /**
  * Created by Alabhya Pandey on 09-04-2018.
@@ -41,7 +36,13 @@ public class CommonActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.events_activity);
 
-        setTitle("News");
+        Toolbar toolbar = findViewById(R.id.recycle_toolbar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
+
+        setTitle("Events");
 
         //"News" here will reflect what you have called your database in Firebase.
         mDatabase = FirebaseDatabase.getInstance().getReference().child("events");
@@ -72,10 +73,16 @@ public class CommonActivity extends AppCompatActivity {
                         final String details = model.getDetails();
                         final String name = model.getName();
                         final String url = model.getUrl();
+                        final String coordinator = model.getCoordinator();
+                        final String result = model.getResult();
+                        final String schedule = model.getSchedule();
                         Intent intent = new Intent(getApplicationContext(), EventDetail.class);
                         intent.putExtra("url", url);
                         intent.putExtra("name",name);
                         intent.putExtra("details",details);
+                        intent.putExtra("coordinator",coordinator);
+                        intent.putExtra("result",result);
+                        intent.putExtra("schedule",schedule);
                         startActivity(intent);
                     }
                 });
@@ -91,6 +98,8 @@ public class CommonActivity extends AppCompatActivity {
             }
         };
 
+        mRecyclerVAdapter.notifyDataSetChanged();
+
         mRecyclerV.setAdapter(mRecyclerVAdapter);
     }
 
@@ -105,10 +114,6 @@ public class CommonActivity extends AppCompatActivity {
     @Override
     public void onStop() {
         super.onStop();
-        mRecyclerVAdapter.stopListening();
-
-
-
     }
 
     public static class DataViewHolder extends RecyclerView.ViewHolder{

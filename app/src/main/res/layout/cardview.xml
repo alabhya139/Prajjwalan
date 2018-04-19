@@ -98,6 +98,7 @@
             </LinearLayout>
         </android.support.v7.widget.CardView>
         <android.support.v7.widget.CardView
+            android:id="@+id/workshop"
             android:foreground="?android:attr/selectableItemBackground"
             android:clickable="true"
             android:focusable="true"
@@ -153,6 +154,7 @@
         android:orientation="horizontal">
 
         <android.support.v7.widget.CardView
+            android:id="@+id/talk_show"
             android:layout_width="@dimen/_105sdp"
             android:layout_height="@dimen/_135sdp"
             android:layout_margin="@dimen/_10sdp"
@@ -202,6 +204,7 @@
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
+            android:id="@+id/contactCard"
             android:layout_width="@dimen/_105sdp"
             android:layout_height="@dimen/_135sdp"
             android:layout_margin="@dimen/_10sdp"
@@ -290,7 +293,7 @@
                     android:layout_below="@id/devee"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/developers"
+                    android:text="@string/sponsor"
                     android:textSize="@dimen/_26ssp"
                     android:layout_marginBottom="@dimen/_8sdp"
                     android:textColor="@color/White"

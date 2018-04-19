@@ -1,15 +1,13 @@
 package com.prajjawalan.prajjwalan;
 
+import android.app.Dialog;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.Typeface;
+import android.net.Uri;
 import android.os.Bundle;
-import android.os.CountDownTimer;
-import android.support.annotation.NonNull;
+import android.os.Handler;
 import android.support.design.widget.AppBarLayout;
 import android.support.design.widget.CollapsingToolbarLayout;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -18,68 +16,105 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
 
-import com.bumptech.glide.request.target.BitmapImageViewTarget;
-
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.prajjawalan.prajjwalan.models.Users;
-import com.prajjawalan.prajjwalan.utils.Constants;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
-public class Home extends BaseActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private ImageView displayImageView;
     private TextView nameTextView;
     private TextView emailTextView;
     private FirebaseAuth mAuth;
     private FirebaseAuth.AuthStateListener mAuthListener;
-    private CardView devCardView;
     private CardView eventCard;
     private TextView updates;
     private TextView movingText;
+    private CardView sponsorsCard;
+    private CardView contactCard;
+    private ImageView dialogClose;
+    private CardView talkShow;
+    private CardView workShop;
+    private CardView talkShowCard;
     Animation animBlink;
-    private TextView countdown;
-    CountDownTimer countDownTimer;
-    SimpleDateFormat simpleDateFormat;
+    EditText editText;
+    String text;
+
+
+    Dialog dialog;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        mAuth = FirebaseAuth.getInstance();
 
-        mFirebaseUser = mAuth.getCurrentUser();
+        dialog = new Dialog(this);
+        dialog.setContentView(R.layout.dialog_update);
 
-        mAuthListener = new FirebaseAuth.AuthStateListener() {
+        dialogClose = dialog.findViewById(R.id.dialogbutton);
+        dialogClose.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
-                if (firebaseAuth.getCurrentUser() == null) {
-                    startActivity(new Intent(Home.this, GoogleSignIn.class));
-                }
+            public void onClick(View v) {
+                dialog.dismiss();
             }
-        };
+        });
+
+
+
+        talkShow = findViewById(R.id.talk_show);
+        workShop = findViewById(R.id.workshop);
+
+        talkShow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Home.this, TalkShow.class));
+            }
+        });
+
+        workShop.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Home.this, Gallery.class));
+            }
+        });
+
+
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
+
+        sponsorsCard = findViewById(R.id.dev_cardview);
+        sponsorsCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Home.this, SponsorsActivity.class));
+            }
+        });
+
+        contactCard = findViewById(R.id.contactCard);
+        contactCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Home.this, ContactUs.class));
+            }
+        });
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -91,16 +126,8 @@ public class Home extends BaseActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         View navHeaderView = navigationView.getHeaderView(0);
-
-        devCardView = findViewById(R.id.dev_cardview);
         eventCard = findViewById(R.id.eventcardId);
 
-        devCardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(Home.this, Developers.class));
-            }
-        });
 
         eventCard.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -133,38 +160,10 @@ public class Home extends BaseActivity
         displayImageView = navHeaderView.findViewById(R.id.name_image);
         nameTextView = navHeaderView.findViewById(R.id.name);
         emailTextView = navHeaderView.findViewById(R.id.email_address);
+        text = getIntent().getStringExtra("text");
 
+        nameTextView.setText(text);
 
-        FirebaseDatabase.getInstance().getReference(Constants.USER_KEY).child(mFirebaseUser.getEmail().replace(".", ","))
-                .addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot) {
-                        if (dataSnapshot.getValue() != null) {
-                            Users users = dataSnapshot.getValue(Users.class);
-                            Glide.with(Home.this)
-                                    .load(users.getPhotUrl())
-                                    .asBitmap()
-                                    .centerCrop()
-                                    .into(new BitmapImageViewTarget(displayImageView) {
-                                        @Override
-                                        protected void setResource(Bitmap resource) {
-                                            RoundedBitmapDrawable circularBitmapDrawable =
-                                                    RoundedBitmapDrawableFactory.create(Home.this.getResources(), resource);
-                                            circularBitmapDrawable.setCircular(true);
-                                            displayImageView.setImageDrawable(circularBitmapDrawable);
-                                        }
-                                    });
-
-                            nameTextView.setText(users.getUser());
-                            emailTextView.setText(users.getEmail());
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(DatabaseError databaseError) {
-
-                    }
-                });
 
 
 
@@ -179,7 +178,7 @@ public class Home extends BaseActivity
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
-                String value =dataSnapshot.getValue(String.class);
+                String value = dataSnapshot.getValue(String.class);
                 movingText.setText(value);
             }
 
@@ -189,31 +188,44 @@ public class Home extends BaseActivity
             }
         });
 
+
         movingText.setSelected(true);
     }
+
 
     @Override
     protected void onStart() {
         super.onStart();
-        mAuth.addAuthStateListener(mAuthListener);
     }
 
 
     @Override
     protected void onStop() {
         super.onStop();
-        if (mAuthListener != null) mAuth.removeAuthStateListener(mAuthListener);
     }
+
+    boolean doubleBackToExitPressedOnce = false;
+
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START);
-        } else {
+        if (doubleBackToExitPressedOnce) {
             super.onBackPressed();
+            return;
         }
+
+        this.doubleBackToExitPressedOnce = true;
+        Toast.makeText(this, "Please click BACK again to exit", Toast.LENGTH_SHORT).show();
+
+        new Handler().postDelayed(new Runnable() {
+
+            @Override
+            public void run() {
+                doubleBackToExitPressedOnce = false;
+            }
+        }, 2000);
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -231,7 +243,7 @@ public class Home extends BaseActivity
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.nav_logout) {
-            mAuth.signOut();
+            startActivity(new Intent(Home.this,SignIn.class));
         }
 
         return super.onOptionsItemSelected(item);
@@ -243,20 +255,47 @@ public class Home extends BaseActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
+        if (id == R.id.gallery) {
+            startActivity(new Intent(Home.this, Gallery.class));
             // Handle the camera action
         } else if (id == R.id.register) {
-            startActivity(new Intent(getApplicationContext(),RegisterActivity.class));
+            startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.developers) {
+            startActivity(new Intent(getApplicationContext(), Developers.class));
 
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.feedback) {
+            Intent emailIntent = new Intent(Intent.ACTION_SENDTO, Uri.fromParts(
+                    "mailto", "kabhya@gmail.com", null));
+            emailIntent.putExtra(Intent.EXTRA_SUBJECT, "My Feedback about Prajjwalan App");
+            emailIntent.putExtra(Intent.EXTRA_TEXT, "");
+            startActivity(Intent.createChooser(emailIntent, "Send email..."));
 
         } else if (id == R.id.sign_out) {
-            mAuth.signOut();
+            startActivity(new Intent(Home.this,SignIn.class));
 
+        } else if (id == R.id.nav_credit) {
+            startActivity(new Intent(Home.this, Credit.class));
+
+        } else if (id == R.id.nav_about) {
+            startActivity(new Intent(Home.this, About.class));
+        } else if (id == R.id.nav_share) {
+            final String appPackageName = getPackageName();
+            try {
+                Intent i = new Intent(Intent.ACTION_SEND);
+                i.setType("text/plain");
+                i.putExtra(Intent.EXTRA_SUBJECT, "Prajjwalan");
+                String sAux = "\nPlease Download Official App For our College Fest Prajjwalan 2k18\n";
+                sAux = sAux + "https://play.google.com/store/apps/details?id=" + appPackageName;
+                i.putExtra(Intent.EXTRA_TEXT, sAux);
+                startActivity(Intent.createChooser(i, "Share using..."));
+            } catch (Exception e) {
+                //e.toString();
+            }
+        } else if (id == R.id.rewards) {
+            startActivity(new Intent(Home.this, Rewards.class));
+        } else if (id == R.id.nav_faq) {
+            startActivity(new Intent(Home.this, Faqs.class));
         }
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);

@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
+        android:paddingBottom="16dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="32dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:textColor="@color/White"
+        android:id="@+id/schedule"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-</android.support.constraint.ConstraintLayout>
+</ScrollView>

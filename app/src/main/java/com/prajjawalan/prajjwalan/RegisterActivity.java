@@ -1,12 +1,9 @@
 package com.prajjawalan.prajjwalan;
 
-import android.content.Intent;
 import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ProgressBar;
@@ -17,14 +14,12 @@ import android.widget.ProgressBar;
 
 public class RegisterActivity extends AppCompatActivity {
     private WebView webView;
-    String url;
     ProgressBar progressBar;
 
     @Override
     public void onCreate( Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_now);
-        url = "www.google.com";
 
         webView = findViewById(R.id.webview);
         webView.setWebViewClient(new WebViewClient(){
@@ -43,7 +38,8 @@ public class RegisterActivity extends AppCompatActivity {
                 webView.setVisibility(View.VISIBLE);
             }
         });
-        webView.loadUrl("http://www.google.com");
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.loadUrl("https://goo.gl/forms/kI93eQRj5fad8tB73");
 
     }
 }

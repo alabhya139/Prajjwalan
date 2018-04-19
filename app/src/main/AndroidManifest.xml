@@ -3,14 +3,21 @@
     package="com.prajjawalan.prajjwalan">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
+        android:label="Prajjwalan"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:label="Prajjwalan"
         android:theme="@style/AppTheme">
+
+        <activity android:name=".Gallery"/>
+
+        <activity android:name=".Credit"
+            android:parentActivityName=".Home"/>
+
         <activity
             android:name=".SplashScreen"
             android:theme="@style/SplashTheme">
@@ -21,26 +28,80 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".CommonActivity"
-            android:label="Events"
-            android:parentActivityName="com.prajjawalan.prajjwalan.Home"/>
 
-        <activity android:name=".RegisterActivity"/>
         <activity
-            android:name=".GoogleSignIn"
-            android:label="Sign In" />
+            android:name=".CommonActivity"
+            android:label="Events"
+            android:parentActivityName=".Home" />
+
+
+        <activity android:name=".RegisterActivity" />
+
+
+        <activity android:name=".ContactUs"
+            android:parentActivityName=".Home"/>
+
+
+        <activity
+            android:name=".SignIn"
+            android:label="Sign In"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation"/>
+
+
         <activity
             android:name=".Home"
             android:label="Home"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation"
             android:theme="@style/AppTheme" />
 
-        <activity android:name=".EventDetail"
-            android:parentActivityName="com.prajjawalan.prajjwalan.CommonActivity"/>
-
-        <activity android:name=".Developers"
-            android:label="Developers"/>
+        <activity android:name=".About"
+            android:parentActivityName=".Home" />
 
 
+        <activity
+            android:name=".EventDetail"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation"
+            android:parentActivityName=".CommonActivity" />
+
+
+        <activity android:name=".SponsorsActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation"
+            android:parentActivityName=".Home"/>
+
+
+        <activity
+            android:name=".Developers"
+            android:label="Developers" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity android:name=".Faqs"/>
+
+        <activity android:name=".TalkShow"
+            android:parentActivityName=".Home"/>
+
+        <activity android:name=".Rewards"
+            android:parentActivityName=".Home"/>
+
+
+
+        <service android:name=".MyFirebaseIntanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT"></action>
+            </intent-filter>
+        </service>
+
+        <service android:name=".MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"></action>
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>
