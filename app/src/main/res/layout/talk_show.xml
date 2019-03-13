@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:background="@color/colorPrimaryDark"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/talk_show_toolbar"
+        android:background="@drawable/cardbg"
+        android:theme="@style/ToolbarStyle"
+        app:titleTextColor="@color/White"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"/>
+
+    <ScrollView
+        android:layout_below="@id/talk_show_toolbar"
+        android:id="@+id/talk_show_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:textColor="@color/White"
+            android:textSize="@dimen/_12ssp"
+            android:layout_margin="@dimen/_8sdp"
+            android:id="@+id/talkshow_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </ScrollView>
+
+
+
+
+
+</RelativeLayout>

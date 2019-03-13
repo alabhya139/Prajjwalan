@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:layout_gravity="center"
+    android:background="@drawable/devbg"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_200sdp">
+
+    <ImageView
+        android:id="@+id/dialogbutton"
+        android:layout_marginRight="@dimen/_16sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_backspace_white_48dp"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/staystilltext"
+        android:layout_margin="@dimen/_8sdp"
+        android:layout_centerInParent="true"
+        android:textSize="@dimen/_16ssp"
+        android:textColor="@color/White"
+        android:text="@string/staystill"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+
+
+
+</RelativeLayout>

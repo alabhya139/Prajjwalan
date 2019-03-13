@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/_8sdp">
+
+    <android.support.v7.widget.CardView
+        app:cardCornerRadius="@dimen/_4sdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:background="@color/White"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/contact_image"
+                android:layout_margin="@dimen/_4sdp"
+                android:src="@drawable/developer"
+                android:layout_gravity="center_vertical"
+                android:layout_width="wrap_content"
+                android:layout_weight="0.1"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_weight="0.8"
+                android:orientation="vertical"
+                android:layout_margin="@dimen/_4sdp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/contact_name"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="@dimen/_12ssp"
+                    android:text="Alabhya Pandey"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/contact_phone"
+                    android:textColor="@color/cardborder"
+                    android:textSize="@dimen/_8ssp"
+                    android:text="+91 9457483864"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

@@ -2,7 +2,7 @@
     <string name="app_name">Prajjwalan</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
-    <string name="web_client_id">412383955346-678m4j4suojelel4atrpo4o53s9uqtpo.apps.googleusercontent.com</string>
+    <string name="web_client_id">520840222686-9eabfpr8cgs4go4bnag2kgv0if1uk2pk.apps.googleusercontent.com</string>
     <string name="title_activity_home">Home</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -10,8 +10,8 @@
 
     <string name="action_settings">Settings</string>
     <string name="facebook_login">Login with Facebook</string>
-    <string name="google_login">Sign In</string>
-    <string name="loading">Loading. Please Wait...</string>
+    <string name="google_login">Click to Continue</string>
+    <string name="loading">Loading.Please Wait... </string>
     <string name="SignUp"><u>New User? Register Here!</u></string>
     <string name="facebook_app_id">165395957513597</string>
     <string name="fb_login_protocol_scheme">fb165395957513597</string>
@@ -23,35 +23,113 @@
     <string name="dev1">Alabhya Pandey</string>
     <string name="dev2">Karan Chauhan</string>
     <string name="dev3">Anshuman Pandey</string>
-    <string name="dev1attr">BTech III<sup><small>rd</small></sup> Year</string>
-    <string name="dev2attr">BTech III<sup><small>rd</small></sup> Year</string>
-    <string name="dev3attr">BTech III<sup><small>rd</small></sup> Year</string>
+    <string name="dev1attr">alabhyap@gmail.com</string>
+    <string name="dev2attr">chauhankaran9878@gmail.com</string>
+    <string name="dev3attr">pandeyanshuman206@gmail.com</string>
+    <string name="branch1">Computer Science and Engineering</string>
+    <string name="branch2">Electronics and Communication Engineering</string>
 
     <!-- string values for cardview layout !-->
 
-    <string name="developers"><b>Developers</b></string>
+    <string name="developers">DEVELOPERS</string>
     <string name="cardview1">Events</string>
     <string name="cardview2">Events Details</string>
-    <string name="cardview3">Events</string>
-    <string name="cardview4">Events Details</string>
-    <string name="cardview5">Events</string>
-    <string name="cardview6">Events Details</string>
-    <string name="cardview7">Events</string>
-    <string name="cardview8">Events Details</string>
+    <string name="cardview3">Gallery</string>
+    <string name="cardview4">Moments</string>
+    <string name="cardview5">Talk Show</string>
+    <string name="cardview6">Know our Guests</string>
+    <string name="cardview7">Contact Us</string>
+    <string name="cardview8">Know More</string>
+    <string name="cardview9">Teams</string>
+    <string name="cardview10">Managing Team</string>
+    <string name="sponsor">SPONSORS</string>
 
     <!-- string values for menu activity_home_drawer !-->
 
     <string name="about">ABOUT</string>
     <string name="faq">FAQs</string>
-    <string name="results">RESULTS</string>
+    <string name="results">CREDITS</string>
     <string name="locate">LOCATION</string>
     <string name="register">REGISTER NOW</string>
     <string name="share">SHARE</string>
-    <string name="emailus">EMAIL US</string>
-    <string name="signout">SIGN ME OUT</string>
+    <string name="emailus">FEEDBACK</string>
+    <string name="signout">LOGOUT</string>
     <string name="communicate">COMMUNICATE</string>
     <string name="settings">SETTINGS</string>
     <string name="myac">My Account</string>
 
+    <string name="event_details"><ul>Event Detail</ul></string>
+    <string name="coord"><ul>Coordinator</ul></string>
 
+    <string name="path_circle">
+    M 50,50
+    m -48,0
+    a 48,48 0 1,0 96,0
+    a 48,48 0 1,0 -96,0
+  </string>
+    <string name="title_activity_maps">Map</string>
+
+    <string name="kiranshastry"><ul>https://www.flaticon.com/authors/kiranshastry</ul></string>
+    <string name="flaticon"><ul>https://www.flaticon.com</ul></string>
+    <string name="smalllikeart"><ul>https://www.flaticon.com/authors/smalllikeart</ul></string>
+    <string name="popcorn_arts"><ul>https://www.flaticon.com/authors/popcorns-arts</ul></string>
+    <string name="MaximBasinski"><ul>https://www.flaticon.com/authors/maxim-basinski</ul></string>
+    <string name="pngtree"><ul>https://www.pngtree.com</ul></string>
+    <string name="freepick"><ul>http://www.freepik.com</ul></string>
+
+    <string name="staystill">Thanks for your Support! We are working hard to Update the contents of the app as soon as possible! Stay tuned!</string>
+
+
+    <string name="credit1">Icon made by Freepik from FlatIcon</string>
+    <string name="credit6">Icon made by Kiranshashtry from FlatIcon</string>
+    <string name="credit2">png images used from pngtree</string>
+    <string name="credit3">Icon made by Maxim Basinski from Flaticons</string>
+    <string name="credit4">Icon made by IconPond from Flaticons</string>
+    <string name="credit5">Icon made by Smallikeart from Flaticons</string>
+
+
+    <string name="about_prajjwalan">Faculty of Engineering and Technology Agra College,
+        Agra has been pioneering educational institute for over 19 years.
+        It boasts of students who have achieved excellence in the field of
+        academics and organization. We believe our sincerity,
+        dedication and focus towards our goal. \n\n
+
+        <b><b> ABOUT PRAJJWALAN</b></b>\n\nPRAJJWALAN, the Technical and Entrepreneurial Festival organized by the student community of F.E.T Agra College, Agra has grown into
+most anticipated technical festival. The 12th edition will be held from 14th-16th March 2019. What sets prajjwalan apart from other
+technical festival is devotion of students working for it and the urge to deliver the maximum. The Competitions, events and workshops
+have attracted all over students from college participating and showcasing their talents and excelling in their fields.\n\nFrom shows like talk-shows, events like robotics, artistry and craftsmanship like wall painting, Prajjwalan has witnessed lot of talents.
+Prajjwalan was started in 2006 with the aim to provide technical awareness among students and develop a platform for the technocrats to
+showcase their talent. \n
+        It is a three days festive event held in the month of April at F.E.T Agra college, Agra which attracts people from all over Agra including
+students academia, corporates and the general public.</string>
+
+
+    <string name="declaration">Note: I do not own any external websites shown via my app special credit to https://www.shutterfly.com </string>
+
+    <string name="q1"><b>What is PRAJJWALAN?</b></string>
+    <string name="a1">PRAJJWALAN is the annual technical symposium organized by the student fraternity of F.E.T. AGRA COLLEGE, AGRA instituted for the enrichment of Engineering and Science. Started with the aim of providing a platform for the student community to assemble, ideate, interact, and share knowledge and develop and showcase their technical skill, PRAJJWALAN has now grown into West Uttar Pradesh largest Science and Technology festival owing to the dedication and perseverance of the student body orchestrating it.</string>
+
+    <string name="q2"><b>What does PRAJJWALAN include?</b></string>
+    <string name="a2"><b>PRAJJWALAN includes:</b>\nInnovative events to test the technical and general knowledge of the participant.\nIntuitive workshops to nurture the abilities of the participant.\nInceptive initiatives to make society a better place to live in.\nInformative guest lectures to know about how eminent personalities address an issue in their respective field of study.\nIncredible shows to illustrate and enjoy the beauty of technology.\n</string>
+
+    <string name="q3"><b>How will a participant get benefited by attending PRAJJWALAN?</b></string>
+    <string name="a3">PRAJJWALAN is a platform to test the abilities of a participant when exposed to a physical problem; this makes the participant aware of his strengths and weaknesses.
+PRAJJWALAN is a platform to bring out the innovative child hidden in every student; this refreshes the participant and gives him/her memories to cherish throughout his/her life.
+</string>
+
+    <string name="q4"><b>How is a participant’s performance in the festival recognized?</b></string>
+    <string name="a4">Winner and runner-ups of every events is awarded a Certificate of Participation and Certificate of Merit along with the prize money allotted to the respective event appreciating him/her for exhibiting his/her talent throughout the festival.
+</string>
+
+    <string name="q5"><b>When and where is PRAJJWALAN going to be held?</b></string>
+    <string name="a5">PRAJJWALAN 2K18 would be a grandiose 3-day festival to be held from 17th April to 19th April, 2018 on the campus of F.E.T Agra college, Agra.</string>
+
+    <string name="q6"><b>How can a participant register for it?</b></string>
+    <string name="a6">All the interested participants can register themselves via app or website. The registration charges are ₹450 per applicant which is inclusive of all the events, workshops, guest lectures, initiatives and KALRAV(annual cultural fest). Student can submit registration charges to collection coordinator of their classes.</string>
+
+    <string name="q7"><b>How to contact via social media?</b></string>
+    <string name="a7"><b>Find us @</b>\n
+        \nOfficial Website: www.prajjwalan.in\n\nOfficial Facebook page: facebook.com/Prajjwalan2k18</string>
+    <string name="dev4_attr_email">divyanshusingh4755@gmail.com</string>
+    <string name="dev4_name">Divyanshu Singh</string>
 </resources>

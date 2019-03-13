@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorPrimaryDark">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/credit_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:theme="@style/ToolbarStyle"
+            app:titleTextColor="@color/White" />
+
+        <LinearLayout
+            android:id="@+id/kiranshastry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/credit_toolbar"
+            android:layout_margin="@dimen/_8sdp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/credits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8sdp"
+                android:text="@string/credit6"
+                android:textColor="@color/White" />
+
+            <TextView
+                android:id="@+id/click_kiran"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="@string/kiranshastry"
+                android:textColor="@color/cardborder"
+                android:textSize="@dimen/_8ssp" />
+
+            <TextView
+                android:id="@+id/clickflat1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="@string/flaticon"
+                android:textColor="@color/cardborder"
+                android:textSize="@dimen/_8ssp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/smallikeart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/kiranshastry"
+            android:layout_margin="@dimen/_8sdp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8sdp"
+                android:text="@string/credit5"
+                android:textColor="@color/White" />
+
+            <TextView
+                android:id="@+id/smallli"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="@string/smalllikeart"
+                android:textColor="@color/cardborder"
+                android:textSize="@dimen/_8ssp" />
+
+            <TextView
+                android:id="@+id/clickflat2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="@string/flaticon"
+                android:textColor="@color/cardborder"
+                android:textSize="@dimen/_8ssp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/popcornart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/smallikeart"
+            android:layout_margin="@dimen/_8sdp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8sdp"
+                android:text="@string/credit4"
+                android:textColor="@color/White" />
+
+            <TextView
+                android:id="@+id/popart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="@string/popcorn_arts"
+                android:textColor="@color/cardborder"
+                android:textSize="@dimen/_8ssp" />
+
+            <TextView
+                android:id="@+id/clickflat3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="@string/flaticon"
+                android:textColor="@color/cardborder"
+                android:textSize="@dimen/_8ssp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/maxim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/popcornart"
+            android:layout_margin="@dimen/_8sdp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8sdp"
+                android:text="@string/credit3"
+                android:textColor="@color/White" />
+
+            <TextView
+                android:id="@+id/maxims"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="@string/MaximBasinski"
+                android:textColor="@color/cardborder"
+                android:textSize="@dimen/_8ssp" />
+
+            <TextView
+                android:id="@+id/clickflat4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="@string/flaticon"
+                android:textColor="@color/cardborder"
+                android:textSize="@dimen/_8ssp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/png"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/maxim"
+            android:layout_margin="@dimen/_8sdp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8sdp"
+                android:text="@string/credit2"
+                android:textColor="@color/White" />
+
+            <TextView
+                android:id="@+id/pngtree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="@string/pngtree"
+                android:textColor="@color/cardborder"
+                android:textSize="@dimen/_8ssp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/freepickk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/png"
+            android:layout_margin="@dimen/_8sdp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_8sdp"
+                android:text="@string/credit1"
+                android:textColor="@color/White" />
+
+            <TextView
+                android:id="@+id/freepick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="@string/freepick"
+                android:textColor="@color/cardborder"
+                android:textSize="@dimen/_8ssp" />
+
+            <TextView
+                android:id="@+id/flat5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_8sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:text="@string/flaticon"
+                android:textColor="@color/cardborder"
+                android:textSize="@dimen/_8ssp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:textColor="@color/navtext"
+            android:layout_margin="@dimen/_8sdp"
+            android:textSize="@dimen/_12ssp"
+            android:text="@string/declaration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/freepickk" />
+
+    </RelativeLayout>
+</ScrollView>

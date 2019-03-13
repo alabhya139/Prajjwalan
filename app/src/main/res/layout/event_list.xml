@@ -3,26 +3,27 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/cards"
     android:layout_width="match_parent"
-    android:layout_height="140dp"
+    android:layout_height="@dimen/_120sdp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="3dip"
     app:cardBackgroundColor="@color/cardbg"
+    android:clickable="true"
+    android:focusable="true"
     android:background="@drawable/card_bg"
     android:layout_margin="8dp">
 
     <RelativeLayout
         android:background="@drawable/card_bg"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_margin="4dp">
+        android:layout_height="match_parent">
 
         <ImageView
             android:layout_margin="8dp"
             android:id="@+id/event_image"
             android:scaleType="centerCrop"
             android:adjustViewBounds="true"
-            android:layout_width="130dp"
-            android:layout_height="130dp" />
+            android:layout_width="@dimen/_130sdp"
+            android:layout_height="@dimen/_120sdp" />
 
         <TextView
             android:textSize="20sp"
@@ -31,6 +32,20 @@
             android:layout_margin="8dp"
             android:layout_toRightOf="@id/event_image"
             android:layout_toEndOf="@id/event_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_toRightOf="@id/event_image"
+            android:layout_toEndOf="@id/event_image"
+            android:layout_below="@id/event_name"
+            android:text="Click to Know More"
+            android:clickable="true"
+            android:focusable="true"
+            android:layout_marginLeft="@dimen/_8sdp"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:textSize="@dimen/_12ssp"
+            android:textColor="@color/navtext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 

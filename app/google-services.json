@@ -10,26 +10,34 @@
       "client_info": {
         "mobilesdk_app_id": "1:412383955346:android:5c2a5907e8bf132b",
         "android_client_info": {
-          "package_name": "com.prajjawalan.prajjwalan"
+          "package_name": "com.prajjawalan.app"
         }
       },
       "oauth_client": [
         {
-          "client_id": "412383955346-7e06euqqvl15pfsuscr6es1d4en9pkb6.apps.googleusercontent.com",
+          "client_id": "412383955346-6dm1ngkk5om6i8jgm2m0se6gf4ohqis4.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.prajjawalan.prajjwalan",
-            "certificate_hash": "ade7788a2a006c6e9bcdee6c0372a49592920ed2"
+            "package_name": "com.prajjawalan.app",
+            "certificate_hash": "d7f5ca9a5521be4c1a69fef299dbd1852ca2322d"
           }
         },
         {
-          "client_id": "412383955346-678m4j4suojelel4atrpo4o53s9uqtpo.apps.googleusercontent.com",
+          "client_id": "412383955346-5uqmmk10h1gr2demb7g4voc7ditf70bh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.prajjawalan.app",
+            "certificate_hash": "34921518b3357cc8dd47df9913336d01793fcad5"
+          }
+        },
+        {
+          "client_id": "412383955346-n5kiv3t7hhq64k752hl2cbiqej877jsh.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAuLMk3aPpGc-qzqiEKlqL6blI7xNyYD5Q"
+          "current_key": "AIzaSyC-APjSC0O24S0_MTS5vrztqGH8uimmGLc"
         }
       ],
       "services": {
@@ -40,10 +48,41 @@
           "status": 2,
           "other_platform_oauth_client": [
             {
-              "client_id": "412383955346-678m4j4suojelel4atrpo4o53s9uqtpo.apps.googleusercontent.com",
+              "client_id": "412383955346-n5kiv3t7hhq64k752hl2cbiqej877jsh.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:412383955346:android:ce583686fe825dbf",
+        "android_client_info": {
+          "package_name": "com.prajjwalan.prajjwalan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "412383955346-n5kiv3t7hhq64k752hl2cbiqej877jsh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC-APjSC0O24S0_MTS5vrztqGH8uimmGLc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
         },
         "ads_service": {
           "status": 2
