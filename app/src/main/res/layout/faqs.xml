@@ -3,13 +3,22 @@
     android:background="@color/colorPrimaryDark"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent">
 <RelativeLayout
      android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/credit_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:theme="@style/ToolbarStyle"
+        app:titleTextColor="@color/White" />
+
     <TextView
         android:id="@+id/titlefaq"
+        android:layout_below="@+id/credit_toolbar"
         android:background="@drawable/cardbg2"
         android:padding="@dimen/_8sdp"
         android:layout_margin="@dimen/_8sdp"

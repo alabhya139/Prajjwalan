@@ -95,7 +95,7 @@
         dedication and focus towards our goal. \n\n
 
         <b><b> ABOUT PRAJJWALAN</b></b>\n\nPRAJJWALAN, the Technical and Entrepreneurial Festival organized by the student community of F.E.T Agra College, Agra has grown into
-most anticipated technical festival. The 11th edition will be held from 17th-19th April 2018. What sets prajjwalan apart from other
+most anticipated technical festival. The 12th edition will be held from 14th-16th March 2019. What sets prajjwalan apart from other
 technical festival is devotion of students working for it and the urge to deliver the maximum. The Competitions, events and workshops
 have attracted all over students from college participating and showcasing their talents and excelling in their fields.\n\nFrom shows like talk-shows, events like robotics, artistry and craftsmanship like wall painting, Prajjwalan has witnessed lot of talents.
 Prajjwalan was started in 2006 with the aim to provide technical awareness among students and develop a platform for the technocrats to
@@ -130,4 +130,6 @@ PRAJJWALAN is a platform to bring out the innovative child hidden in every stude
     <string name="q7"><b>How to contact via social media?</b></string>
     <string name="a7"><b>Find us @</b>\n
         \nOfficial Website: www.prajjwalan.in\n\nOfficial Facebook page: facebook.com/Prajjwalan2k18</string>
+    <string name="dev4_attr_email">divyanshusingh4755@gmail.com</string>
+    <string name="dev4_name">Divyanshu Singh</string>
 </resources>

@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:412383955346:android:5c2a5907e8bf132b",
         "android_client_info": {
-          "package_name": "com.prajjawalan.prajjwalan"
+          "package_name": "com.prajjawalan.app"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "412383955346-6dm1ngkk5om6i8jgm2m0se6gf4ohqis4.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.prajjawalan.prajjwalan",
+            "package_name": "com.prajjawalan.app",
             "certificate_hash": "d7f5ca9a5521be4c1a69fef299dbd1852ca2322d"
           }
         },
@@ -26,7 +26,7 @@
           "client_id": "412383955346-5uqmmk10h1gr2demb7g4voc7ditf70bh.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.prajjawalan.prajjwalan",
+            "package_name": "com.prajjawalan.app",
             "certificate_hash": "34921518b3357cc8dd47df9913336d01793fcad5"
           }
         },
